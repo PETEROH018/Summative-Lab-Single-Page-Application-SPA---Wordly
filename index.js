@@ -52,7 +52,7 @@ function saveToFavorites(word) {
     let favorites = JSON.parse(localStorage.getItem('favorites')) || []
     if (favorites.includes(word)) {
             alert('Word already in favorites!')
-            return
+            return handleDisplayFavorites()
         }
     favorites.push(word)
     alert('Word saved to favorites!')
