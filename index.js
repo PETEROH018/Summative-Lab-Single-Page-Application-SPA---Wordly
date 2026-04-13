@@ -1,7 +1,8 @@
 const inputForm = document.getElementById('search-form')
 const searchInput = document.getElementById('search-input')
 const resultsDiv = document.getElementById('results')
-
+//This function uses an event listener in the input form element to get the word a user has input into the input field
+//That word is then used in the fetch() method and the returned response is processed using async and await since fetch returns a promise
 function handleFetchResults(){
 inputForm.addEventListener('submit', async (event) => {
     event.preventDefault()
@@ -19,7 +20,7 @@ inputForm.addEventListener('submit', async (event) => {
         throw new Error(`word not found`)
     }
     const data = await response.json()
-    DisplayResults(data)
+    DisplayResults(data) //The processed data is passed to this function for displaying
     }
     catch (error) {
         resultsDiv.innerHTML = `<p id="error">Word not found!!!</p>`
@@ -30,6 +31,7 @@ inputForm.addEventListener('submit', async (event) => {
 }
 handleFetchResults()
 
+//This function handles displaying of the word and its details to the user
 function DisplayResults(data) {
     const meanings = data[0].meanings
     resultsDiv.innerHTML = `
@@ -48,6 +50,9 @@ function DisplayResults(data) {
 
 }
 
+//This function uses the built in local storage of the browser to store favorite words which persist even when the browser is closed
+//The local storage stores key value pairs where both the key and value must always be strings
+//This is why JSON.parse() is used to get an array/object from local storage and JSON.stringfy() is used to convert the array/object to JSON string.
 function saveToFavorites(word) {
     let favorites = JSON.parse(localStorage.getItem('favorites')) || []
     if (favorites.includes(word)) {
@@ -60,6 +65,7 @@ function saveToFavorites(word) {
     handleDisplayFavorites()
 }
 
+//This function handles displaying the favorites to the user
 function handleDisplayFavorites(){
    
     
