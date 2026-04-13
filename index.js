@@ -1,8 +1,8 @@
 const inputForm = document.getElementById('search-form')
 const searchInput = document.getElementById('search-input')
 const resultsDiv = document.getElementById('results')
-//This function uses an event listener in the input form element to get the word a user has input into the input field
-//That word is then used in the fetch() method and the returned response is processed using async and await since fetch returns a promise
+//This function uses an event listener at the input form element where when the button is clicked, the word a user has input into the input field is captured
+//That word is then used in the fetch() method and after the promise returned by fetch is fulfilled, the response is processed using async and await 
 function handleFetchResults(){
 inputForm.addEventListener('submit', async (event) => {
     event.preventDefault()
