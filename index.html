@@ -2,15 +2,19 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Worldly Dictionary</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div id="container">
-    <h1>Search for any word</h1>
+    <div id="header">
+        <h1>Search for any word</h1>
+        <button id="favorites-view-btn" onclick="handleDisplayFavorites()" aria-label = "Click to view favorite words" title = "Click to view favorite words">View Favorites</button>
+    </div>
+    
     <form id ="search-form" action="/search">
-        <input id = "search-input" type="text" name="query" placeholder="Enter a word" required>
+        <input id = "search-input" type="text" name="query" placeholder="Enter a single word" pattern="^[A-Za-z\s]+$" required>
         <button id = "search-btn" type="submit" aria-label = "Search for a word">Search</button>
     </form>
     <div id="results">
@@ -21,3 +25,4 @@
     
 </body>
 </html>
+
