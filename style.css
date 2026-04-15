@@ -47,3 +47,56 @@ body {
     align-items: center;
     justify-content: space-between;
 }
+.favorite-star {
+  font-size: 30px;
+  color: #0a0000;
+  cursor: pointer;
+  transition: color 0.2s;
+  border: none;
+  background: none;
+}
+
+.favorite-star:hover {
+  color: #ffcc00; 
+}
+#favorites-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+#favorites-view-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+#favorites-view-btn:hover {
+    background-color: #218838;
+}
+#header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+#remove-favorite-btn {
+    padding: 5px 10px;
+    font-size: 14px;
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+#remove-favorite-btn:hover {
+    background-color: #c82333;
+}
+#favorite-words {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
